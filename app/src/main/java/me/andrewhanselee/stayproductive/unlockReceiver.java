@@ -3,6 +3,7 @@ package me.andrewhanselee.stayproductive;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -12,6 +13,7 @@ import android.widget.Toast;
  */
 
 public class unlockReceiver extends BroadcastReceiver{
+
 
     public unlockReceiver(){
 
@@ -27,6 +29,10 @@ public class unlockReceiver extends BroadcastReceiver{
         Log.d(TAG, log);
         Toast.makeText(context, log, Toast.LENGTH_LONG).show();
         setup.num_rem -= 1;
+        if(setup.num_rem == 0){
+
+            in_progress.cdt.cancel();
+        }
         setup.str = Integer.toString(setup.num_rem);
     }
 

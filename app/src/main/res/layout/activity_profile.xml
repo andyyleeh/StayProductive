@@ -1,9 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="me.andrewhanselee.stayproductive.profile">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="18dp"
+        android:text="Username"
+        android:textSize="40dp"/>
+
+    <TextView
+        android:id="@+id/title_rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textSize="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="15dp"
+        android:layout_below="@+id/username"
+        android:layout_alignStart="@+id/username" />
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/detail_info"
+        android:layout_below="@+id/title_rank"
+        android:orientation="vertical"
+        android:layout_marginLeft="9dp"
+        android:layout_marginRight="9dp"
+        android:background="@drawable/border"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/num_complete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:text=": 0"
+            android:textSize="18dp"
+            android:layout_below="@+id/textView"
+            android:layout_alignStart="@+id/textView" />
+
+        <TextView
+            android:id="@+id/num_fail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:text=": 0"
+            android:layout_below="@+id/num_complete"
+            android:layout_alignStart="@+id/num_complete" />
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:id="@+id/trophy"
+        android:text="Trophies"
+        android:textSize="25dp"
+        android:layout_below="@+id/detail_info"
+        android:layout_alignStart="@+id/username" />
+
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:id="@+id/trophy_grid"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginRight="9dp"
+        android:layout_below="@+id/trophy"
+        android:background="@drawable/border"
+        android:numColumns="4">
+
+    </GridView>
+
+
+</RelativeLayout>

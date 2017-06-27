@@ -1,30 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
 
+<TextView
+    android:id="@+id/title_main"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="133dp"
+    android:text="TextView"
+    android:textSize="40dp"
+    tools:text="Title" />
 
-    <Button
-        android:id="@+id/start_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Start"
-        android:onClick="startSetup"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="47dp" />
+<Button
+    android:id="@+id/get_started"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="113dp"
+    android:text="Get Started"
+    android:textSize="20dp"
+    android:onClick="getStarted"/>
 
-    <Button
-        android:id="@+id/profile_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Profile"
-        android:onClick="viewProfile"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/start_button"
-        android:layout_marginBottom="171dp" />
-
-
-
+<TextView
+    android:id="@+id/descrip"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/title_main"
+    android:textSize="25dp"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="38dp"
+    android:text="Description"/>
 </RelativeLayout>
+
