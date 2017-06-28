@@ -9,9 +9,11 @@
         android:layout_height="wrap_content"
         android:text="Start"
         android:onClick="begin"
+        android:textColor="#88B7FF"
         android:layout_marginBottom="88dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button"/>
 
     <EditText
         android:id="@+id/time_indicator"

@@ -25,7 +25,9 @@ android:layout_height="match_parent">
     android:layout_marginBottom="113dp"
     android:text="Get Started"
     android:textSize="20dp"
-    android:onClick="getStarted"/>
+    android:onClick="getStarted"
+    android:textColor="#88B7FF"
+    android:background="@drawable/button"/>
 
 <TextView
     android:id="@+id/descrip"

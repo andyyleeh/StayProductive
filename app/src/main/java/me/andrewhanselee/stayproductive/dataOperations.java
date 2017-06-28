@@ -61,7 +61,7 @@ public class dataOperations extends SQLiteOpenHelper{
         String[] args = {username};
         ContentValues cv = new ContentValues();
         Log.d("Database operations", "Updated values");
-        cv.put(dataTable.tableInfo.USER_ID, "bob");
+        cv.put(dataTable.tableInfo.USER_ID, username);
         cv.put(dataTable.tableInfo.USER_SUC, complete);
         cv.put(dataTable.tableInfo.USER_FAIL, fail);
         dbase.update(dataTable.tableInfo.Table, cv, "USER_ID = ?" , args);

@@ -47,11 +47,13 @@ public class in_progress extends AppCompatActivity {
         num_unlock_rem.setText("Remaining unlocks: " + setup.str);
         reverseTimer(setup.time * 60, time_remaining);
 
-
         Cursor cr = userinfo.dbOP.getInfo(userinfo.dbOP);
         cr.moveToFirst();
+
         complete = Integer.parseInt(cr.getString(1));
         fail = Integer.parseInt(cr.getString(2));
+
+
 
 
     }
@@ -78,23 +80,27 @@ public class in_progress extends AppCompatActivity {
             public void onFinish() {
                 complete ++;
                 newComplete = String.valueOf(complete);
-
-
-                userinfo.dbOP.updateInfo(userinfo.dbOP, "andy", newComplete, "0");
-
-                tv.setText("Completed");
-
-
-                unregisterReceiver(br);
-
                 StringBuffer buffer = new StringBuffer();
-                Cursor res = userinfo.dbOP.getInfo(userinfo.dbOP);while (res.moveToNext()) {
+                Cursor res = userinfo.dbOP.getInfo(userinfo.dbOP);
+                res.moveToFirst();
+                while (res.moveToNext()) {
                     buffer.append("Name :"+ res.getString(0)+"\n");
                     buffer.append("Complete :"+ res.getString(1)+"\n");
                     buffer.append("Fail :"+ res.getString(2)+"\n");
                 }
+                res.moveToFirst();
 
                 showMessage("Data",buffer.toString());
+
+                Log.d("fail", "here?");
+                userinfo.dbOP.updateInfo(userinfo.dbOP, res.getString(0), newComplete, res.getString(2));
+                Log.d("fail", "or here?");
+
+
+                tv.setText("Completed");
+
+                res.close();
+                unregisterReceiver(br);
             }
         }.start();
     }

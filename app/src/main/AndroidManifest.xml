@@ -18,18 +18,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".home">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+             <intent-filter>
+             <action android:name="android.intent.action.MAIN" />
+
+
+             <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
         </activity>
-        <activity
-            android:name=".Profile"
-            android:label="@string/title_activity_profile"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".setup" />
-        <activity android:name=".in_progress"></activity>
+        <activity android:name=".in_progress" />
+        <activity android:name=".profile" />
+        <activity android:name=".userinfo" />
+        <activity android:name=".menu_page"></activity>
     </application>
 
 </manifest>

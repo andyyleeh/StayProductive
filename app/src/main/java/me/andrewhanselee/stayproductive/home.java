@@ -5,10 +5,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.graphics.Typeface;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -33,12 +35,15 @@ public class home extends AppCompatActivity {
         SharedPreferences.Editor editor = sp.edit();
         Boolean isFirstRun = sp.getBoolean("firstGo", true);
 
+        String run = Boolean.toString(isFirstRun);
+
         if (!isFirstRun) {
             startActivity(new Intent(this, menu_page.class));
             finish();
-        }
+        } else {
 
-        editor.putBoolean("firstGo", false).commit();
+            editor.putBoolean("firstGo", false).commit();
+        }
 
     }
 
@@ -47,5 +52,7 @@ public class home extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+
 
 }

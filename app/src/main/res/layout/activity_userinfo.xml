@@ -42,5 +42,7 @@
         android:layout_below="@+id/editText3"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="88dp"
-        android:text="Button" />
+        android:text="Button"
+        android:textColor="#88B7FF"
+        android:background="@drawable/button"/>
 </RelativeLayout>

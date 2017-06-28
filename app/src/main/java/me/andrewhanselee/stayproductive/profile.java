@@ -45,5 +45,6 @@ public class profile extends AppCompatActivity {
         userN.setText(name);
         fail.setText("Failures: "+cr.getString(2));
         succ.setText("Completed: "+cr.getString(1));
+        cr.close();
     }
 }
